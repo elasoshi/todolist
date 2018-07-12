@@ -1,5 +1,6 @@
 import React from 'react';
 import { View, Image, TouchableOpacity } from 'react-native';
+import { NavigationActions } from 'react-navigation';
 import Menu from '../images/menu.png';
 import Dots from '../images/dots.png';
 
@@ -7,7 +8,7 @@ const HeaderButtons = () => {
   const { containerStyle, buttonStyle, imageStyle, buttonStyle2 } = styles;
   return (
     <View style={containerStyle}>
-      <TouchableOpacity style={buttonStyle}>
+      <TouchableOpacity onPress={() => { NavigationActions.navigate('DrawerOpen'); }} style={buttonStyle}>
         <Image source={Menu} style={imageStyle} />
       </TouchableOpacity>
 
@@ -20,9 +21,8 @@ const HeaderButtons = () => {
 
 const styles = {
   containerStyle: {
+    alignSelf: 'flex-start',
     flexDirection: 'row',
-    paddingTop: 20,
-    height: 60
 
 
   },

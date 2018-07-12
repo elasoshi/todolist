@@ -4,32 +4,33 @@ import { Thumbnail, HeaderButtons } from './index';
 import BackgroundImage from '../images/bg.jpg';
 
 
-const Header = () => {
+const Header = ({ name, occupation }) => {
   return (
-    <View>
-    <ImageBackground source={BackgroundImage} style={styles.imageBg} />
+    <View style={{ height: 230, flex: 1 }}>
+    <ImageBackground source={BackgroundImage} style={styles.imageBg} >
     <View style={styles.headerStyle}>
       <HeaderButtons />
-      <Thumbnail />
+      <Thumbnail name={name} occupation={occupation} />
     </View>
+    </ImageBackground>
   </View>
   );
 };
 
 const styles = {
   headerStyle: {
+    flex: 1,
     position: 'absolute',
     flexDirection: 'column',
-    paddingTop: 20,
-    height: 230,
+    justifyContent: 'center',
+    alignItems: 'center',
     elevation: 3,
+    marginTop: 40
 
   },
   imageBg: {
     height: 230,
-    marginTop: 20,
-    flexDirection: 'column',
-    opacity: 0.8
+    opacity: 0.8,
   }
 };
 

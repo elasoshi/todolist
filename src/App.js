@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Actions } from 'react-native-router-flux';
 import firebase from 'firebase';
 import Router from './Router';
+import Blank from './Blank';
 
 
 class App extends Component {
@@ -26,15 +27,21 @@ class App extends Component {
   });
 }
 
-renderContent() {
-  Actions.main();
-}
-
   render() {
+    switch (this.state.LoggedIn) {
+      case true:
+        Actions.main();
+        break;
+      case false:
+        Actions.login();
+        break;
+        default:
+    }
     return (
       <Router />
     );
   }
+
 }
 
 export default App;

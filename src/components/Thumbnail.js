@@ -2,7 +2,7 @@ import React from 'react';
 import { View, Image, Text, TouchableOpacity } from 'react-native';
 import ProfileImg from '../images/profile.jpg';
 
-const Thumbnail = () => {
+const Thumbnail = ({ name, occupation }) => {
   const {
      imageContainer,
       mainContainer,
@@ -20,10 +20,10 @@ const Thumbnail = () => {
 
       <View style={textContainer}>
         <Text style={nameText}>
-          Yusuf Shamsudeen
+          {name}
         </Text>
         <Text style={subNameText}>
-          Developer/Mobile Developer
+          {occupation}
         </Text>
       </View>
 
@@ -33,26 +33,26 @@ const Thumbnail = () => {
 
 const styles = {
   imageContainer: {
-    height: 58,
-    width: 58,
-    borderRadius: 58 / 2,
+    height: 100,
+    width: 100,
+    borderRadius: 100 / 2,
     justifyContent: 'center',
     alignItems: 'center',
     shadowColor: '#000',
     shadowOffset: { weight: 0, height: 2 },
     shadowOpacity: 0.2,
+    flexDirection: 'row'
+
 
   },
   mainContainer: {
-    marginLeft: 15,
-    marginTop: 50,
-    height: 58,
-    width: 221,
-    flexDirection: 'row',
-    alignItems: 'center'
+    justifyContent: 'center',
+    alignItems: 'center',
+    width: '100%',
+    height: '100%'
   },
   textContainer: {
-    paddingLeft: 10
+
   },
   nameText: {
     color: '#FFF',
@@ -67,13 +67,13 @@ const styles = {
     shadowColor: '#000',
     shadowOffset: { weight: 0, height: 2 },
     shadowOpacity: 0.2,
-    fontSize: 10
+    fontSize: 10,
+    alignSelf: 'center'
   },
   thumbnailStyle: {
-    width: 58,
-    height: 58,
-    justifyContent: 'center',
-    borderRadius: 58 / 2
+    width: 100,
+    height: 100,
+    borderRadius: 100 / 2
 
 
   }

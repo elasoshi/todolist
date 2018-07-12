@@ -104,8 +104,8 @@ const styles = {
     alignItems: 'center',
   },
   imageBg: {
-    width: 375,
-    height: 667
+    width: '100%',
+    height: '100%'
   },
   textStyle: {
     color: '#fff',
